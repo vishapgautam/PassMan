@@ -9,8 +9,4 @@ router
      .post('/generatePass',mainpageController.generatePass)
 
 
-
-
-
-
 module.exports=router

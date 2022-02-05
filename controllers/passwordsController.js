@@ -25,7 +25,6 @@ module.exports.addPass=async(req,res)=>{
 module.exports.deletePass=async(req,res)=>{
     const objId=await req.params.objectId
     Password.findByIdAndDelete({_id:objId},function(err,result){
-        console.log(result)
         if (!err) res.status(200).json({success:"true",description:"deleted"})
     })
 
