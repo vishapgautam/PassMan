@@ -5,7 +5,7 @@ const authunticationController=require('../controllers/authuntication')
 
 
 router
-     .get('/',authunticationController,mainpageController.home)
+     .get('/',mainpageController.home)
      .post('/generatePass',mainpageController.generatePass)
 
 
