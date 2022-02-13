@@ -14,6 +14,8 @@ module.exports.signUp=async(req,res)=>{
     const lastName=await req.body.lastName
     const emailId=await req.body.emailId
     const password=await req.body.password
+    const confirmPass=req.body.confirmPass
+    if (confirmPass!=password) res.status(400).json({success:'false',description:"password didn't matched"})
     if (!firstName||!lastName||!emailId||!password){
         res.status(404).json({success:'false',description:"Fields are missing"})
     }
@@ -23,19 +25,18 @@ module.exports.signUp=async(req,res)=>{
             res.status(404).json({success:'false',description:"Email already exists"})
         }
         else{
-        bcrypt.hash(password,5,async(err,hash)=>{
-        var secretKey=process.env.SECRET_KEY||"vishap"
-        const  token= jwt.sign(emailId,secretKey)
-            const user=new User({
-            firstName:firstName,
-            lastName:lastName,
-            emailId:emailId,
-            password:hash,
-            confirmPass:password,
-            token:token
-            })
+               const  token= await jwt.sign(emailId,process.env.SECRET_KEY)
+               const user=new User({
+                firstName:firstName,
+                lastName:lastName,
+                emailId:emailId,
+                password:password,
+                confirmPass:password,
+                token:token
+             })
             user.save(function(error,result){
                 if (error){
+                    console.log(error)
                     res.status(400).json({success:false,error:error})
                 }else{
                 res.cookie("name",user.firstName,{
@@ -50,10 +51,9 @@ module.exports.signUp=async(req,res)=>{
                 }
           })
             //Now send this user to its new home page
-        })
+        }
     }
     }
-}
 
 module.exports.logInForm=(req,res)=>{
     res.status(200).render('logInForm')
@@ -95,4 +95,8 @@ module.exports.logIn=async(req,res)=>{
 
           }
     }
+}
+
+module.exports.addpass=(req,res)=>{
+     res.render('addpass')
 }

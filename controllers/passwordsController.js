@@ -1,18 +1,28 @@
 const Password=require('../models/passwords')
+const User=require("../models/users")
+const bcrypt=require("bcryptjs")
 
 module.exports.getPass=async(req,res)=>{
-  const userId=await req.params.userId
-  const passwords=await Password.find({userId:userId},{userId:0,__v:0})      
-     if (!passwords) res.status(400).json({success:"false",error:"passwords not found"})
-    else res.status(200).json({success:"true",result:passwords})
-        
+  const emailId=req.body.emailId
+  const password=req.body.password
+  if (!emailId | !password) res.status(400).json({success:"false",description:"provide email and password"})
+     const user=await User.find({emailId:emailId})
+     if (!user[0]) res.status(400).json({success:"false",description:"user dosen't exists"})
+     const confirm=await bcrypt.compare(password,user[0].password)
+     if (confirm){
+         const passwords=await Password.find({userId:user[0]._id}).select("-__v -_id -userId")
+         res.status(200).json({success:"true",length:passwords.length,result:passwords})
+     } 
     }
 module.exports.addPass=async(req,res)=>{
-    const userId=await req.params.userId
-    const key=await req.body.key
-    const value=await req.body.value
+    const emailId=req.body.emailId
+    const key=req.body.key
+    const value=req.body.value
+    const user=await User.find({emailId:emailId})
+    if (!user[0]) res.status(400).json({success:"false",description:"email dosen't exists"})
+    else{
     const password= new Password({
-        userId:userId,
+        userId:user[0]._id,
         key:key,
         value:value
     })
@@ -20,7 +30,7 @@ module.exports.addPass=async(req,res)=>{
         if (err) res.status(400).json({success:"false",error:err})
         else res.status(200).json({success:"true",result:result})
     })
-}
+}}
 
 module.exports.deletePass=async(req,res)=>{
     const objId=await req.params.objectId
