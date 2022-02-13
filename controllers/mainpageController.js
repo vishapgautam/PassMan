@@ -8,10 +8,10 @@ module.exports.home=async(req,res)=>{
 }
 
 module.exports.generatePass=async(req,res)=>{
-    var NoAlphaS=req.body.NoAlphaS
-    var NoAlphaL=req.body.NoAlphaL
-    var NoNum=req.body.NoNum
-    var NoSpecialCh=req.body.NoSpecialCh
+    var NoAlphaS=req.body.NoAlphaS|3
+    var NoAlphaL=req.body.NoAlphaL|3
+    var NoNum=req.body.NoNum|3
+    var NoSpecialCh=req.body.NoSpecialCh|3
     const AlphaS=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
     const AlphaL=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     const SpecialCh=["@","@","#","$","%","^","&","*","?"]
