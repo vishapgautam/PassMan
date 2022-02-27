@@ -2,51 +2,43 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
+    <script src="http://code.jquery.com/jquery-1.6.2.min.js"></script> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <style>
-    body{
-      background-image: linear-gradient(to right, rgb(14, 10, 247) , rgb(8, 197, 245))
-    }
-    .form-div{
-      width:35%;
-      margin-left: 30%;
-      border-style: solid;
-      border-width: 3px;
-      border-radius: 10px;
-    }
-    h1{
-      margin-left: 28%;
-      margin-top: 2%;
-      margin-bottom: 9%;
-  
-    }
-    .btn{
-      margin-left: 40%;
-      margin-bottom: 10%;
-    }
-    
 
+    <title>Hello, world!</title>
+    <style>
+        body{
+         background-image: linear-gradient(to right, rgb(40, 79, 252) , rgb(8, 197, 245))
+         }
+        .password{
+            height:50px;
+            width:200px;
+            background-color: brown;
+        }
+        h2{
+          margin-left: 35%;
+          margin-top:1%;
+          margin-bottom: 1%;
+        }
+        .card{
+      background-color: rgb(90, 210, 247);
+        }
     </style>
-    <title>PassMan</title>
   </head>
   <body>
-    <h1>Get All of Your Saved Passwords</h1>
-    <div class="form-div">
-    <form method="POST" action='/mainpage/passwords/getallpass'>
-        <div class="form-group">
-          <label for="emailId"><h4><strong>Email</strong></h4></label>
-          <input type="email" class="form-control" id="emailId" name="emailId" placeholder="email">
-        </div>
-        <div class="form-group">
-          <label for="password"><h4><strong>Password</strong></h4></label>
-          <input type="password" class="form-control" name="password">
-        </div>
-        <button type="submit" class="btn btn-primary but">Log-In</button>
-      </form>
+    <h2>PassMan Generated For You</h2>
+    <div class="jumbotron">
+      <h1 class="display-4">Password --> "<strong><%- password %></strong>"</h1>
+      <p class="lead">Above is the 12 character long Random password that contains 3 lower case alphabets,3 upper case alphabets, 3 special symbols and 3 numbers.</p>
+      <hr class="my-4">
+      <p>You can copy the above password to use it.</p>
+      <p class="lead">
+        <a class="btn btn-primary btn-lg" href="/">Main Page</a>
+      </p>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

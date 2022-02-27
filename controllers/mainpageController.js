@@ -44,5 +44,5 @@ module.exports.generatePass=async(req,res)=>{
         }
 
     }
-    res.status(200).json({success:"true",desciption:"send mainPage with password generated",result:Pass})
+    res.status(200).render('generatedPass',{password:Pass})
 }

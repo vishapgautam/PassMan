@@ -7,7 +7,8 @@ const passwordsController=require('../controllers/passwordsController')
 router
      .post('/getallpass',passwordsController.getPass)//also verify userToken using authuntication middleware in each request here
      .post('/add',passwordsController.addPass)
-     .delete('/:objectId',passwordsController.deletePass)
-     .patch('/:objectId',passwordsController.updatePass)
+     .get('/delete/:objectId',passwordsController.deletePass)
+     .get('/update/:objectId',passwordsController.getupdateform)
+     .post('/update/:objectId',passwordsController.updatePass)
 
 module.exports=router

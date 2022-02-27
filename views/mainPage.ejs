@@ -11,71 +11,42 @@
 
     <title>Hello, world!</title>
     <style>
+        body{
+         background-image: linear-gradient(to right, rgb(40, 79, 252) , rgb(8, 197, 245))
+         }
         .password{
             height:50px;
             width:200px;
             background-color: brown;
         }
+        h2{
+          margin-top:2%;
+          margin-bottom: 1%;
+        }
+        .card{
+      background-color: rgb(90, 210, 247);
+        }
     </style>
   </head>
   <body>
-    <h1>Hello,<%= name %> </h1>
-    <div class="container-fluid" >
-    <form method="POST" action="\mainpage">
-        <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Number of small alphabets</label>
-          <div class="col-sm-10">
-            <input type="number" class="form-control" name="NoAlphaS">
+    <h2>Here are all your saved passwords--></h2>
+    <% passwords.forEach(password => { %>
+      <div class="card-columns">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Password field --> <%-password.key %></h5>
+            <p class="card-text">Password Value --> <%-password.value %></p>
+            <a class="btn btn-danger" href="/mainpage/passwords/delete/<%-password._id %>">Delete</a>
+            <a class="btn btn-warning" href="/mainpage/passwords/update/<%-password._id %>">Update</a>
           </div>
         </div>
-        <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Number of capital alphabets</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" name="NoAlphaL">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Number of Numerals</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" name="NoNum">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Number of special characters</label>
-            <div class="col-sm-10">
-              <input type="number" class="form-control" name="NoSpecialCh">
-            </div>
-          </div>
-            <button class="btn btn-primary">Generate</button>
-          </div>
-        </div>
-      </form>
-      <button id="button" class="btn btn-primary">Generate</button>
-    <div class="password">
-      <%= Pass %>
-    </div>
+      </div>
+     <% }) %>
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script>
-      document.getElementById("button").addEventListener('click',function1)
-      function function1(){
-      
-         $.ajax({ 
-            url: '/generatePass',
-            type: 'POST',
-            cache: false, 
-            data: { field1: 1, field2: 2 }, 
-            success: function(data){
-               alert('Success!')
-            }
-            , error: function(jqXHR, textStatus, err){
-                alert('text status '+textStatus+', err '+err)
-            }
-         })
- }
-     </script>
   </body>
 </html>

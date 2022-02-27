@@ -7,36 +7,66 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <style>
+      body{
+        background-image: linear-gradient(to right, rgb(14, 10, 247) , rgb(8, 197, 245))
+      }
+      .form-div{
+        width:45%;
+        margin-left: 25%;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 10px;
+      }
+      h1{
+        margin-left: 42%;
+        margin-top: 2%;
+        margin-bottom: 4%;
+    
+      }
+      .btn{
+        margin-left: 40%;
+      }
+      small{
+        color: white;
+        margin-bottom: 10%;
+        text-decoration: white;
+      }
+      
+  
+      </style>
     <title>PassMan</title>
   </head>
   <body>
     <h1>Sign Up</h1>
     <form method="POST">
+      <div class="form-div">
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="firstName">FirstName</label>
+            <label for="firstName"><h4>FirstName</h4></label>
             <input type="text" class="form-control" name="firstName" placeholder="First-Name">
           </div>
           <div class="form-group col-md-6">
-            <label for="lastName">LastName</label>
+            <label for="lastName"><h4>LastName</h4></label>
             <input type="text" class="form-control" name="lastName" placeholder="Second-Name">
           </div>
         </div>
         <div class="form-group">
-          <label for="emailId">Email</label>
+          <label for="emailId"><h4>Email</h4></label>
           <input type="email" class="form-control" id="emailId" name="emailId" placeholder="email">
         </div>
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password"><h4>Password</h4></label>
           <input type="password" class="form-control" name="password">
         </div>
         <div class="form-group">
-            <label for="confirmPass">confirmPass</label>
+            <label for="confirmPass"><h4>Confirm Password</h4></label>
             <input type="password" class="form-control" name="confirmPass">
           </div>
         <button type="submit" class="btn btn-primary" action='/signUp'>Sign in</button>
+        <small id="emailHelp" class="form-text"><strong>Note:--></strong> After signUp you will be redirected to the main page form where you can add and retrieve your passwords</small>
       </form>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

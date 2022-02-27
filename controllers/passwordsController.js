@@ -6,12 +6,13 @@ module.exports.getPass=async(req,res)=>{
   const emailId=req.body.emailId
   const password=req.body.password
   if (!emailId | !password) res.status(400).json({success:"false",description:"provide email and password"})
-     const user=await User.find({emailId:emailId})
-     if (!user[0]) res.status(400).json({success:"false",description:"user dosen't exists"})
-     const confirm=await bcrypt.compare(password,user[0].password)
+     const user=await User.findOne({emailId:emailId})
+     if (!user) res.status(400).json({success:"false",description:"user dosen't exists"})
+     const confirm=await bcrypt.compare(password,user.password)
      if (confirm){
-         const passwords=await Password.find({userId:user[0]._id}).select("-__v -_id -userId")
-         res.status(200).json({success:"true",length:passwords.length,result:passwords})
+         const passwords=await Password.find({userId:user._id}).select("-__v -userId")
+         res.status(200).render('mainPage',{passwords:passwords})
+        //  res.status(200).json({success:"true",length:passwords.length,result:passwords})
      } 
     }
 module.exports.addPass=async(req,res)=>{
@@ -28,14 +29,14 @@ module.exports.addPass=async(req,res)=>{
     })
     password.save(function(err,result){
         if (err) res.status(400).json({success:"false",error:err})
-        else res.status(200).json({success:"true",result:result})
+        else res.status(200).render('notify',{response:"Added successfuly",message1:"Your password is Added successfully.Now you can go back to get your passwords page by clicking back.",message2:"If you want to go back to main page click mainpage below.",button1:"Your Pass",button2:"Main Page"})
     })
 }}
 
 module.exports.deletePass=async(req,res)=>{
     const objId=await req.params.objectId
     Password.findByIdAndDelete({_id:objId},function(err,result){
-        if (!err) res.status(200).json({success:"true",description:"deleted"})
+        if (!err) res.status(200).render('notify.ejs',{response:"Deleted successfuly",message1:"Your password is deleted successfully.Now you can go back to get your passwords page by clicking back.",message2:"If you want to go back to main page click mainpage below.",button1:"Back",button2:"Main Page"})
     })
 
 }
@@ -46,6 +47,9 @@ module.exports.updatePass=async(req,res)=>{
      const value=await req.body.value
      Password.findByIdAndUpdate({_id:objId},{$set:req.body},function(err,result){
          if (err) res.status(400).json({success:"false",error:err})
-         else res.status(200).json({success:"true",updated:result})
+         else res.status(200).render('notify',{response:"Updated successfuly",message1:"Your password is updated successfully.Now you can go back to get your passwords page by clicking back.",message2:"If you want to go back to main page click mainpage below.",button1:"Back",button2:"Main Page"})
      })
+}
+module.exports.getupdateform=(req,res)=>{
+    res.render('updateform')
 }
