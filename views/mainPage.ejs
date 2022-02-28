@@ -27,25 +27,34 @@
           margin-bottom: 1%;
         }
         .card{
-      background-color: rgb(90, 210, 247);
+         background-color: rgb(90, 210, 247);
+        }
+        .card{
+         margin-bottom: 2%;
+         width:70%;
+         border-radius: 10px;
+
+        }
+        h2{
+          font-size: 2.9vw;
+          margin-bottom:2%;
         }
     </style>
   </head>
   <body>
     <h2>Here are all your saved passwords--></h2>
+    <div class="card-columns"></div>
     <% passwords.forEach(password => { %>
-      <div class="card-columns">
-        <div class="card">
+          <div class="card">
           <div class="card-body">
             <h5 class="card-title">Password field --> <%-password.key %></h5>
-            <p class="card-text">Password Value --> <%-password.value %></p>
+            <p class="card-text">Password Value --> "<%-password.value %>"</p>
             <a class="btn btn-danger" href="/mainpage/passwords/delete/<%-password._id %>">Delete</a>
             <a class="btn btn-warning" href="/mainpage/passwords/update/<%-password._id %>">Update</a>
           </div>
-        </div>
-      </div>
+          </div>
      <% }) %>
-      
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
