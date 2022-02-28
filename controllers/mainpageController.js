@@ -4,7 +4,7 @@ const jwt=require("jsonwebtoken")
 module.exports.home=async(req,res)=>{
     const name= await req.cookies.name
     const id=await req.cookies.Id
-    res.status(200).json({success:"true",description:"send mainpage of user"})
+    res.status(200).render('notify',{response:"Your Accound Created successfuly",message1:"Your accound is created successfully.Now you can go back to get your passwords[if you have save any]  by clicking back.",message2:"If you want to go back to main page click mainpage below.",button1:"Back",button2:"Main Page"})
 }
 
 module.exports.generatePass=async(req,res)=>{
