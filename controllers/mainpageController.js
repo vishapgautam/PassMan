@@ -8,13 +8,13 @@ module.exports.home=async(req,res)=>{
 }
 
 module.exports.generatePass=async(req,res)=>{
-    if ((req.body.NoAlphaS)>0) var NoAlphaS=parseInt(req.body.NoAlphaS)
+    if ((req.body.NoAlphaS)>0 &(req.body.NoAlphaS)<15) var NoAlphaS=parseInt(req.body.NoAlphaS)
     else var NoAlphaS = 3
-    if ((req.body.NoAlphaL)>0) var NoAlphaL=parseInt(req.body.NoAlphaL)
+    if ((req.body.NoAlphaL)>0 & (req.body.NoAlphaL)<15) var NoAlphaL=parseInt(req.body.NoAlphaL)
     else var NoAlphaL = 3
-    if ((req.body.NoSpecialCh)>0) var NoSpecialCh =parseInt(req.body.NoSpecialCh)
+    if ((req.body.NoSpecialCh)>0 & (req.body.NoSpecialCh)<15) var NoSpecialCh =parseInt(req.body.NoSpecialCh)
     else var NoSpecialCh = 3
-    if ((req.body.NoNum)>0) var NoNum = parseInt(req.body.NoNum)
+    if ((req.body.NoNum)>0 & (req.body.NoNum)<15) var NoNum = parseInt(req.body.NoNum)
     else var NoNum = 3
     const a=NoAlphaS
     const b=NoAlphaL
