@@ -2,6 +2,7 @@ const express=require('express')
 const router=express.Router()
 const homeController=require('../controllers/homeController')
 const mainpageController=require('../controllers/mainpageController')
+const passwordsController=require('../controllers/passwordsController')
 
 router
       .get('/',homeController.home)
@@ -11,6 +12,7 @@ router
       .post('/logIn',homeController.logIn)
       .get('/addpass',homeController.addpass)
       .get('/genpass',mainpageController.generatePass)
+      .get('/genCustom',passwordsController.custompass)
 
 
 module.exports=router

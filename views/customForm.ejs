@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="icon"
+      href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Asterisk.svg/819px-Asterisk.svg.png"
+    />
+      <title> PassMan</title>
+    <style>
+      body{
+        background-image: linear-gradient(to right, rgb(14, 10, 247) , rgb(8, 197, 245))
+      }
+      .form-div{
+        width:45%;
+        margin-left: 25%;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 10px;
+      }
+      h1{
+        margin-left: 25%;
+        margin-top: 2%;
+        margin-bottom: 4%;
+    
+      }
+      .btn{
+        margin-left: 40%;
+      }
+      small{
+        color: white;
+        margin-bottom: 10%;
+        text-decoration: white;
+      }
+      
+  
+      </style>
+    <title>PassMan</title>
+  </head>
+  <body>
+    <h1>Tell us what you want in your Password</h1>
+    <form method="POST" action="/mainpage/generatePass">
+      <div class="form-div">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="NoAlphaS"><h4>No. of small Alpha</h4></label>
+            <input type="number" class="form-control" name="NoAlphaS" placeholder="Number of small alphabet">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="NoAlphaL"><h4>No. of capital Alpha</h4></label>
+            <input type="number" class="form-control" name="NoAlphaL" placeholder="Number of capital alphabet">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for=""><h4>No. of Num</h4></label>
+          <input type="number" class="form-control" id="NoNum" name="NoNum" placeholder="Number of Numbers">
+        </div>
+        <div class="form-group">
+          <label for="NoSpecialCh"><h4>No. of special char.</h4></label>
+          <input type="number" class="form-control" name="NoSpecialCh" placeholder="Number of special character">
+        </div>
+        <button type="submit" class="btn btn-primary" href="generatePass">Generate</button>
+      </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

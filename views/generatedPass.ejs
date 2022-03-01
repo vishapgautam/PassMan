@@ -28,6 +28,12 @@
           margin-bottom: 1%;
           font-size:2.9vw;
         }
+        .display-4{
+          font-size: 3.2vw;
+        }
+        .lead{
+          font-size: 2.2vw;
+        }
         .card{
       background-color: rgb(90, 210, 247);
         }
@@ -37,7 +43,7 @@
     <h2>PassMan Generated a Pass For You</h2>
     <div class="jumbotron">
       <h1 class="display-4">Password --> "<strong><%- password %></strong>"</h1>
-      <p class="lead">Above is the 12 character long Random password that contains 3 lower case alphabets,3 upper case alphabets, 3 special symbols and 3 numbers.</p>
+      <p class="lead">Above is the <%- length %> character long Random password that contains <%- NoAlphaS %> lower case alphabets,<%- NoAlphaL %> upper case alphabets, <%- NoSpecialCh %> special symbols and <%- NoNum %> numbers.</p>
       <hr class="my-4">
       <p>You can copy the above password to use it.</p>
       <p class="lead">

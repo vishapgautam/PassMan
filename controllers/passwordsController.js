@@ -62,3 +62,7 @@ module.exports.updatePass=async(req,res)=>{
 module.exports.getupdateform=(req,res)=>{
     res.render('updateform')
 }
+
+module.exports.custompass=(req,res)=>{
+    res.status(200).render('customForm')
+}

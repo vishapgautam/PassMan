@@ -8,10 +8,18 @@ module.exports.home=async(req,res)=>{
 }
 
 module.exports.generatePass=async(req,res)=>{
-    var NoAlphaS=req.body.NoAlphaS|3
-    var NoAlphaL=req.body.NoAlphaL|3
-    var NoNum=req.body.NoNum|3
-    var NoSpecialCh=req.body.NoSpecialCh|3
+    if ((req.body.NoAlphaS)>0) var NoAlphaS=parseInt(req.body.NoAlphaS)
+    else var NoAlphaS = 3
+    if ((req.body.NoAlphaL)>0) var NoAlphaL=parseInt(req.body.NoAlphaL)
+    else var NoAlphaL = 3
+    if ((req.body.NoSpecialCh)>0) var NoSpecialCh =parseInt(req.body.NoSpecialCh)
+    else var NoSpecialCh = 3
+    if ((req.body.NoNum)>0) var NoNum = parseInt(req.body.NoNum)
+    else var NoNum = 3
+    const a=NoAlphaS
+    const b=NoAlphaL
+    const c=NoNum
+    const d=NoSpecialCh
     const AlphaS=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
     const AlphaL=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     const SpecialCh=["@","@","#","$","%","^","&","*","?"]
@@ -44,5 +52,5 @@ module.exports.generatePass=async(req,res)=>{
         }
 
     }
-    res.status(200).render('generatedPass',{password:Pass})
+    res.status(200).render('generatedPass',{password:Pass,length:length,NoAlphaS:a,NoAlphaL:b,NoNum:c,NoSpecialCh:d})
 }
