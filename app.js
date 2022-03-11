@@ -7,9 +7,22 @@ const app=express()
 const http=require('http')
 const PORT=process.env.PORT
 const bodyParser = require('body-parser');
+// const passport=require('passport')
+// const session=require('express-session')
+// const MongoStore=require('connect-mongo')
 
+
+// require('./config/passport')(passport)
+// app.use(session({
+//   secret:process.env.SECRET_KEY,
+//   resave:false,
+//   saveUninitialized:false,
+//   // store:new MongoStore({mongooseConnection:mongoose.Connection})
+// }))
+// app.use(passport.initialize())
+// app.use(passport.session())
 //set morgan for development only
-// app.use(morgan('dev'))
+ app.use(morgan('dev'))
 
 //set view engine and bodyparser
 app.set('view engine','ejs')
@@ -36,10 +49,12 @@ const homeRoute=require('./routes/home')
 const mainpageRoute=require('./routes/mainpageRoute')
 const passwordsRoute=require('./routes/passwordsRoute')
 
+
 //Middleware routes
 app.use('/',homeRoute)
 app.use('/mainpage',mainpageRoute)
 app.use('/mainpage/passwords',passwordsRoute)
+
 
 
 

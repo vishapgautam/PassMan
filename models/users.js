@@ -24,12 +24,14 @@ const UserSchema=mongoose.Schema(
       },
       password:{
           type:String,
-          required:true,
       },
       confirmPass:{
           type:String,
-          required:true
       },
+      profilePic:{
+          type:String
+      },
+
        token:{type:String
      },
       mobileNumber:{
@@ -40,9 +42,13 @@ const UserSchema=mongoose.Schema(
 })
 UserSchema.pre('save', async function(next) {
     // Hash the password with cost of 12
+    if (this.password){
     this.password = await bcrypt.hash(this.password, 12);
     this.confirmPass = undefined;
     next();
+    }else{
+        next()
+    }
   });
 
 module.exports=mongoose.model("User",UserSchema)
