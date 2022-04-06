@@ -13,33 +13,7 @@
       href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Asterisk.svg/819px-Asterisk.svg.png"
     />
       <title> PassMan</title>
-    <style>
-        body{
-         background-image: linear-gradient(to right, rgb(40, 79, 252) , rgb(8, 197, 245))
-         }
-        .password{
-            height:50px;
-            width:200px;
-            background-color: brown;
-        }
-        h2{
-          margin-top:2%;
-          margin-bottom: 1%;
-        }
-        .card{
-         background-color: rgb(90, 210, 247);
-        }
-        .card{
-         margin-bottom: 2%;
-         width:70%;
-         border-radius: 10px;
-
-        }
-        h2{
-          font-size: 2.9vw;
-          margin-bottom:2%;
-        }
-    </style>
+      <link rel="stylesheet" type="text/css" href="/css/style.css" />
   </head>
   <body>
     <h2>Here are all your saved passwords--></h2>
@@ -48,7 +22,8 @@
           <div class="card">
           <div class="card-body">
             <h5 class="card-title">Password field --> <%-password.key %></h5>
-            <p class="card-text">Password Value --> "<%-password.value %>"</p>
+            <p class="card-text">Password Value -->"<%-password.value %>"</p>
+            <!-- <input type="button"  class="btn btn-primary" onclick="copyLink()" data-toggle="tooltip" title="Copy to Clipboard" value="Copy" readonly /> -->
             <a class="btn btn-danger" href="/mainpage/passwords/delete/<%-password._id %>">Delete</a>
             <a class="btn btn-warning" href="/mainpage/passwords/update/<%-password._id %>">Update</a>
           </div>
@@ -61,4 +36,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
+  <!-- <script>
+    function copyLink() {
+      let copyText = document.getElementById("copyText") 
+  
+      var selection = window.getSelection();
+  
+      var range = document.createRange();
+  
+      range.selectNodeContents(copyText);
+  
+      selection.removeAllRanges();
+  
+      selection.addRange(range);
+  
+      document.execCommand('copy');
+    }
+  </script> -->
 </html>

@@ -1,0 +1,31 @@
+html {
+    height: 100%;
+    color:white
+}
+
+body{
+    background-image: linear-gradient(to right, rgb(48, 48, 49) , rgb(122, 125, 126)) !important;
+    }
+   .password{
+       height:50px;
+       width:200px;
+       background-color: brown;
+   }
+   h2{
+     margin-top:2%;
+     color:white;
+     margin-bottom: 1%;
+   }
+   .card{
+    background-color: rgb(90, 210, 247);
+   }
+   .card{
+    margin-bottom: 2%;
+    width:70%;
+    border-radius: 10px;
+
+   }
+   h2{
+     font-size: 2.9vw;
+     margin-bottom:2%;
+   }
