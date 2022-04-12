@@ -13,41 +13,17 @@
     href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Asterisk.svg/819px-Asterisk.svg.png"
   />
     <title> PassMan</title>
-    <style>
-        body{
-         background-image: linear-gradient(to right, rgb(40, 79, 252) , rgb(8, 197, 245))
-         }
-        .password{
-            height:50px;
-            width:200px;
-            background-color: brown;
-        }
-        h2{
-          margin-left: 33%;
-          margin-top:1%;
-          margin-bottom: 1%;
-          font-size:2.9vw;
-        }
-        .display-4{
-          font-size: 3.2vw;
-        }
-        .lead{
-          font-size: 2.2vw;
-        }
-        .card{
-      background-color: rgb(90, 210, 247);
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
   </head>
   <body>
-    <h2>PassMan Generated a Pass For You</h2>
-    <div class="jumbotron">
-      <h1 class="display-4">Password --> "<span id="copyText"><strong><%- password %></strong></span>"</h1>
+    <h2 id="heading44">PassMan Generated a Pass For You</h2>
+    <div class="jumbotron jumbotron44">
+      <h1 class="display-4 display44">Password --> "<span id="copyText"><strong><%- password %></strong></span>"</h1>
       <input type="button"  class="btn btn-primary" onclick="copyLink()" data-toggle="tooltip" title="Copy to Clipboard" value="Copy" readonly />
-      <p class="lead">Above is the <%- length %> character long Random password that contains <%- NoAlphaS %> lower case alphabets,<%- NoAlphaL %> upper case alphabets, <%- NoSpecialCh %> special symbols and <%- NoNum %> numbers.</p>
+      <p class="lead lead44">Above is the <%- length %> character long Random password that contains <%- NoAlphaS %> lower case alphabets,<%- NoAlphaL %> upper case alphabets, <%- NoSpecialCh %> special symbols and <%- NoNum %> numbers.</p>
       <hr class="my-4">
       <p>You can copy the above password to use it.</p>
-      <p class="lead">
+      <p class="lead lead44">
         <a class="btn btn-primary btn-lg" href="/">Main Page</a>
       </p>
     </div>

@@ -29,3 +29,170 @@ body{
      font-size: 2.9vw;
      margin-bottom:2%;
    }
+
+
+
+
+   /* //////////////////////////////////////////////////////// */
+
+
+   #d1{
+    height: 665px;
+    background-color: red;
+    background-image: linear-gradient(#ffd600, #ffea00);
+    
+  }
+  .name1{
+    color: #f57f17;
+    font-weight: bold;
+    text-align: center;
+  }
+  .description1{
+    color: rgb(121, 113, 104);
+  }
+  .jumbotron {
+    padding-bottom: 5vw;
+    border-bottom: 10px  solid black;
+  }
+    #bt11{
+    width: 100px;
+    background-color: #2196F3;
+    border: #2196F3;
+
+    }
+    #bt2{
+    width: 100px; 
+    background-color: #00c853;
+    border: #00c853
+
+    }
+    #about{
+      background-color: #f7ef9e;
+      width: 100%;
+      max-height: max-content;
+      text-align: center;
+    }
+
+
+
+    /* /////////////////////////////////////////////// */
+    /* addpassword */
+    body{
+      background-image: linear-gradient(to right, rgb(48, 48, 49) , rgb(122, 125, 126));
+    }
+    .form-div11{
+      width:35%;
+      margin-left: 30%;
+      border-style: solid;
+      border-width: 3px;
+      border-radius: 10px;
+    }
+    #heading22{
+      margin-left: 35%;
+      margin-top: 2%;
+      margin-bottom: 4%;
+  
+    }
+    .btn22{
+      margin-left: 40%;
+      margin-bottom: 10%;
+    }
+    
+
+
+/* //////////////////////////////////////////////////////////// */
+/* custompasswordform */
+.form-div33{
+  width:45%;
+  margin-left: 25%;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 10px;
+}
+#heading33{
+  margin-left: 25%;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  color:white
+
+}
+.btn33{
+  margin-left: 40%;
+}
+
+.label33{
+  color:white
+}
+
+
+/* ///////////////////////////////////////////////////////////// */
+/* generatedpass */
+
+.password{
+  height:50px;
+  width:200px;
+  background-color: brown;
+}
+#heading44{
+margin-left: 31%;
+margin-top:1%;
+margin-bottom: 1%;
+font-size:2.9vw;
+color:white
+}
+.display44{
+font-size: 3.2vw;
+}
+.lead44{
+font-size: 2.2vw;
+}
+.jumbotron44{
+background-color: rgb(41, 229, 250);
+}
+
+
+/* //////////////////////////////////// */
+/* loginForm */
+.form-div55{
+  width:35%;
+  margin-left: 30%;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 10px;
+}
+#heading55{
+  margin-left: 28%;
+  margin-top: 2%;
+  margin-bottom: 8%;
+  color:white
+
+}
+.btn55{
+  margin-left: 40%;
+  margin-bottom: 10%;
+}
+
+
+/* /////////////////////////////////////////////////// */
+/* signInform */
+.form-div66{
+  width:45%;
+  margin-left: 25%;
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 10px;
+}
+#heading66{
+  margin-left: 42%;
+  margin-top: 2%;
+  margin-bottom: 4%;
+
+}
+.btn66{
+  margin-left: 40%;
+}
+#small66{
+  color: white;
+  margin-bottom: 10%;
+  text-decoration: white;
+}

@@ -12,63 +12,32 @@
       href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Asterisk.svg/819px-Asterisk.svg.png"
     />
       <title> PassMan</title>
-    <style>
-      body{
-        background-image: linear-gradient(to right, rgb(48, 48, 49) , rgb(122, 125, 126));
-      }
-      .form-div{
-        width:45%;
-        margin-left: 25%;
-        border-style: solid;
-        border-width: 3px;
-        border-radius: 10px;
-      }
-      h1{
-        margin-left: 25%;
-        margin-top: 2%;
-        margin-bottom: 4%;
-        color:white
-    
-      }
-      .btn{
-        margin-left: 40%;
-      }
-      small{
-        color: white;
-        margin-bottom: 10%;
-        text-decoration: white;
-      }
-      label{
-        color:white
-      }
-      
-  
-      </style>
+      <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <title>PassMan</title>
   </head>
   <body>
-    <h1>Tell us what you want in your Password</h1>
+    <h1 id="heading33">Tell us what you want in your Password</h1>
     <form method="POST" action="/mainpage/generatePass">
-      <div class="form-div">
+      <div class="form-div33">
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="NoAlphaS"><h4>No. of small Alpha</h4></label>
+            <label class="label33" for="NoAlphaS"><h4>No. of small Alpha</h4></label>
             <input type="number" class="form-control" name="NoAlphaS" placeholder="Number of small alphabet">
           </div>
           <div class="form-group col-md-6">
-            <label for="NoAlphaL"><h4>No. of capital Alpha</h4></label>
+            <label class="label33" for="NoAlphaL"><h4>No. of capital Alpha</h4></label>
             <input type="number" class="form-control" name="NoAlphaL" placeholder="Number of capital alphabet">
           </div>
         </div>
         <div class="form-group">
-          <label for=""><h4>No. of Num</h4></label>
+          <label class="label33" for=""><h4>No. of Num</h4></label>
           <input type="number" class="form-control" id="NoNum" name="NoNum" placeholder="Number of Numbers">
         </div>
         <div class="form-group">
-          <label for="NoSpecialCh"><h4>No. of special char.</h4></label>
+          <label class="label33" for="NoSpecialCh"><h4>No. of special char.</h4></label>
           <input type="number" class="form-control" name="NoSpecialCh" placeholder="Number of special character">
         </div>
-        <button type="submit" class="btn btn-primary" href="generatePass">Generate</button>
+        <button type="submit" class="btn btn-primary btn33" href="generatePass">Generate</button>
       </form>
     </div>
     <!-- Optional JavaScript -->

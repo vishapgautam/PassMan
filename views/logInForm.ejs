@@ -12,36 +12,12 @@
     href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Asterisk.svg/819px-Asterisk.svg.png"
   />
     <title> PassMan</title>
-     <style>
-    body{
-      background-image: linear-gradient(to right, rgb(48, 48, 49) , rgb(122, 125, 126));
-    }
-    .form-div{
-      width:35%;
-      margin-left: 30%;
-      border-style: solid;
-      border-width: 3px;
-      border-radius: 10px;
-    }
-    h1{
-      margin-left: 28%;
-      margin-top: 2%;
-      margin-bottom: 9%;
-      color:white
-  
-    }
-    .btn{
-      margin-left: 40%;
-      margin-bottom: 10%;
-    }
-    
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <title>PassMan</title>
   </head>
   <body>
-    <h1>Get All of Your Saved Passwords</h1>
-    <div class="form-div">
+    <h1 id="heading55">Get All of Your Saved Passwords</h1>
+    <div class="form-div55">
     <form method="POST" action='/mainpage/passwords/getallpass'>
         <div class="form-group">
           <label for="emailId"><h4><strong>Email</strong></h4></label>
@@ -51,7 +27,7 @@
           <label for="password"><h4><strong>Password</strong></h4></label>
           <input type="password" class="form-control" name="password">
         </div>
-        <button type="submit" class="btn btn-primary but">Log-In</button>
+        <button type="submit" class="btn btn-primary btn55">Log-In</button>
       </form>
     </div>
     <!-- Optional JavaScript -->
