@@ -37,7 +37,12 @@ const UserSchema=mongoose.Schema(
       mobileNumber:{
           type:Number
       },
-      passwords:{type:Array}
+      passwords:{
+          type:Array
+      },
+      logs:{
+          type:Array
+      }
 
 })
 UserSchema.pre('save', async function(next) {

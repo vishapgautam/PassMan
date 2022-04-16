@@ -1,26 +1,13 @@
 const Password=require('../models/passwords')
 const User=require("../models/users")
 const bcrypt=require("bcryptjs")
+const jwt=require('jsonwebtoken')
 
-module.exports.getPass=async(req,res)=>{     
-     try{
-        const emailId=req.body.emailId
-        const password=req.body.password
-        if (!emailId | !password){
-            res.status(400).render('notifyError',{response:"Fields are Missing",message1:"Some of your fields are missing please go back to retry.",message2:"If you want you can also go back to homepage.",button1:"Back",button2:"Home Page"})
-        }else{
-         const user=await User.findOne({emailId:emailId})
-         const confirm=await bcrypt.compare(password,user.password)
-        if (confirm){
-         const passwords=await Password.find({userId:user._id}).select("-__v -userId")
-         res.status(200).render('mainPage',{passwords:passwords})
-        }else{
-            res.status(400).render('notifyError',{response:"Invalid password or Email",message1:"Please go back and enter the right password and email.",message2:"If you don't have account then go to the homepage and signup .",button1:"Retry",button2:"Home Page"})
-        }
-        }
-    }catch(err){
-        res.status(400).render('notifyError',{response:"Invalid password or Email",message1:"Please go back and enter the right password and email.",message2:"If you don't have account then go to the homepage and signup .",button1:"Retry",button2:"Home Page"})
-     }
+module.exports.getPass=async(req,res)=>{    
+    const id= req.params.id
+    console.log(id)
+    const passwords=await Password.find({userId:id}).select("-__v -userId")
+    res.status(200).render('mainPage',{passwords:passwords})
     }
 
 module.exports.addPass=async(req,res)=>{
