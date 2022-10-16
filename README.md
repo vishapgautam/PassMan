@@ -1,9 +1,8 @@
 # PassMan
-Aim :-> The aim of this project will be to simplify the complex task of managing passwords which include generating strong and random passwords, storing them in a secure manner and providing them when they needed.  
+# Aim :-> 
+The aim of this project will be to simplify the complex task of managing passwords which include generating strong and random passwords, storing them in a secure manner and providing them when they needed.  
 
- 
-
-Why it’s needed and to whom? 
+# Why it’s needed and to whom? 
 
 As of now days people have lots of different accounts from bank to social media, most of them may have more than 20 credentials and that number can go up to 50 for a person working in IT fields. 
 
@@ -41,15 +40,14 @@ Here is the list of some most commonly used passwords are  -->
 
 These above are some of the most used common passwords that can be cracked within less than 1 millisecond. 
 
-If you provide any information in your password then it will become information or data for someone, that can be dangerous for anyone no matter whom the password belongs, lets take a case like I made a password my birth date 06/09/2001 now if I make this as a password there are few serious security concerns, first is that it can be easily gussed, second is that it itself reveals some information about the user and the third is now the attacker got one more category of password to target others that is birthdate. 
+If you provide any information in your password then it will become information or data for someone, that can be dangerous for anyone no matter whom the password belongs, lets take a case like I made a password my birth date 06/09/2001 now if I make this as a password there are few serious security concerns, first is that it can be easily gussed, second is that it itself reveals some information about the user and the third is now the attacker got one more category of password to target ot hers that is birthdate. 
 
 So now to solve all the above problems we are creating an web application that will solve our two big problems first is it will able to generate highly random and complex passwords that will fulfill all the criteria of a strong password, and second is that it can also store your passwords within this webapp securely for your future use. 
 
 User to this webapp will be any person that want to remove all the hustle of remembering different different passwords. 
 
  
-
-How accessible and handy this it? 
+# How accessible and handy this it? 
 
 In terms of handiness, this whole webapp can be accessed with just one link anywhere around the world,  using that single link(or website) you can create, see, modify, and delete any of your passwords. Your passwords will be saved securly in a remote database using hashing and encryption. 
 
@@ -57,9 +55,7 @@ In terms of handiness, this whole webapp can be accessed with just one link anyw
 
  
 
-  
-
-Technical Specifications -->  
+# Technical Specifications -->  
 
 This webapp is majorily divided into two parts --> 
 
@@ -67,8 +63,8 @@ This webapp is majorily divided into two parts -->
 
  Back-end 
 
-Front-end Part -> It include all the templets like main homepage, login page, user page etc. The front end part is made using the following technologies -> 
-
+Front-end Part -> It include all the templets like main homepage, login page, user page etc. The front end part is made using the following technologies
+ 
     1) HTML 
 
     2) CSS 
